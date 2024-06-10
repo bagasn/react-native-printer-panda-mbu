@@ -1,5 +1,3 @@
-// ReactNativePrinterPandaModule.java
-
 package com.printerpanda;
 
 import static com.facebook.react.bridge.UiThreadUtil.runOnUiThread;
@@ -18,7 +16,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.hardware.usb.UsbDevice;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -142,6 +139,7 @@ public class ReactNativePrinterPandaModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    @SuppressLint("MissingPermission")
     public void findAvailableDevice(Promise promise) {
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         btList.clear();
